@@ -26,7 +26,7 @@ def repeating_key(barray):
 		repeater = [i] * len(barray)
 	
 		try:
-			outs.append(bytearray.decode(xor(repeater, barray), "utf-8").replace("\n", ""))
+			outs.append(bytearray.decode(xor(repeater, barray), "utf-8"))
 		except:
 			pass
 	
@@ -96,5 +96,9 @@ def getscores(data):
 	except:
 		pass
 
-#outs = repeating_key(hex_string)
-#gtprint(getscores(outs))
+def runner(x):
+
+	outs = repeating_key(x)
+	return(getscores(outs))
+
+# print(runner(hex_string))

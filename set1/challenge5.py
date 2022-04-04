@@ -5,9 +5,7 @@ key = "ICE"
 
 message = "Burning 'em, if you ain't quick and nimble I go crazy when I hear a cymbal"
 
-def splitter(k, m):
-
-	lenk = len(k)
+def splitter(lenk, m):
 
 	l = []
 
@@ -25,9 +23,7 @@ def splitter(k, m):
 
 	return(l)
 
-def combiner(k, marray):
-
-	lenk = len(k)
+def combiner(lenk, marray):
 
 	outbyte = b''
 
@@ -44,7 +40,7 @@ def combiner(k, marray):
 
 def repeating_key_xorer(k, m):
 
-	ms = splitter(k, m)
+	ms = splitter(len(k), m)
 	
 	l = []
 
@@ -55,4 +51,4 @@ def repeating_key_xorer(k, m):
 
 	return(l)
 
-print(combiner(key, repeating_key_xorer(key, message)).hex())
+#print(combiner(len(key), repeating_key_xorer(key, message)).hex())
