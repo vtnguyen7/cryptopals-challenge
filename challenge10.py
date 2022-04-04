@@ -67,6 +67,8 @@ def decryptor(ciphertext, IV):
 
 	return(plaintext)
 
-#decrypted = decryptor(text, IV)
-#print(decrypted)
+decrypted = decryptor(text, IV)
+out = open("10-out.txt", "w")
+out.write(decrypted)
+out.close()
 #print(base64.b64encode(encryptor(bytearray(decrypted, "utf-8"), IV)))

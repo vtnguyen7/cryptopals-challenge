@@ -43,14 +43,20 @@ def freq_count(l):
 
 	return(things)
 
-freqs = []
+def find_text(blocktexts):
 
-for i in range(len(blocktexts)):
+	freqs = []
 	
-	freqs.append({"text": blocktexts[i], "frequency_count": freq_count(blocktexts[i])})
+	for i in range(len(blocktexts)):
+		
+		freqs.append({"text": blocktexts[i], "frequency_count": freq_count(blocktexts[i])})
+	
+	for i in freqs:
+	
+		if i["frequency_count"][-1]["count"] > 1:
+	
+			return("".join([x.hex() for x in i["text"]]))
 
-for i in freqs:
+	return(False)
 
-	if i["frequency_count"][-1]["count"] > 1:
-
-		print("".join([x.hex() for x in i["text"]]))
+# print(find_text(blocktexts))
