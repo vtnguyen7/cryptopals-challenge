@@ -75,7 +75,7 @@ def randomcryptor(plaintext):
 
 		return(cipher.encrypt(padded_text))
 
-def oracle(plaintext):
+def guesser(plaintext):
 
 	
 	text = randomcryptor(plaintext)	
@@ -96,4 +96,4 @@ def oracle(plaintext):
 
 		return("CBC")
 
-# print(oracle(plaintext))
+# print(guesser(plaintext))
